@@ -20,7 +20,7 @@ class VersionComposant extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'numero_version';
+	public $displayField = 'id';
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -30,15 +30,7 @@ class VersionComposant extends AppModel {
  *
  * @var array
  */
-	public $hasOne = array(
-		'ComposantLogiciel' => array(
-			'className' => 'ComposantLogiciel',
-			'foreignKey' => 'version_composant_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
+        
 
 /**
  * belongsTo associations
@@ -50,7 +42,7 @@ class VersionComposant extends AppModel {
 			'className' => 'ComposantLogiciel',
 			'foreignKey' => 'composant_logiciel_id',
 			'conditions' => '',
-			'fields' => '',
+			'fields' => 'id',
 			'order' => ''
 		)
 	);

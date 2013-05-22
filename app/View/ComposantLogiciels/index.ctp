@@ -33,7 +33,7 @@
 		<td><?php echo h($composantLogiciel['ComposantLogiciel']['taux']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Voir'), array('action' => 'view', $composantLogiciel['ComposantLogiciel']['id'])); ?>
-			<?php echo $this->Html->link(__('Edition'), array('action' => 'edit', $composantLogiciel['ComposantLogiciel']['id'])); ?>
+			<?php echo $this->Html->link(__('Edition'), array('controller'=>'versioncomposants','action' => 'edit', $composantLogiciel['VersionComposant']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Supprimer'), array('action' => 'delete', $composantLogiciel['ComposantLogiciel']['id']), null, __('Are you sure you want to delete # %s?', $composantLogiciel['ComposantLogiciel']['id'])); ?>
 		</td>
 	</tr>

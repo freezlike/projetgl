@@ -5,7 +5,7 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('numero_version');
-		echo $this->Form->input('composant_logiciel_id');
+		//echo $this->Form->input('composant_logiciel_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

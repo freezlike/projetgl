@@ -16,7 +16,7 @@ class VersionComposantsController extends AppController {
         parent::beforeFilter();
         $role = $this->Session->read('Auth.User.role');
         if (($role === 'responsable') or ($role === 'admin')) {
-            $this->Auth->allow('','add', 'view', 'edit','');
+            $this->Auth->allow('','add', 'view', 'edit','delete');
         } else {
             parent::isAuthorized();
         }
@@ -51,7 +51,7 @@ class VersionComposantsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->VersionComposant->create();
-			if ($this->VersionComposant->save($this->request->data)) {
+			if ($this->VersionComposant->saveAll($this->request->data,true)) {
 				$this->Session->setFlash(__('The version composant has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {

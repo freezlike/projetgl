@@ -10,6 +10,7 @@
 		echo $this->Form->input('license_id');
 		//echo $this->Form->input('version_composant_id');
                 echo $this->Form->input('VersionComposant.numero_version');
+                //echo $this->Form->input('VersionComposant.composant_logiciel_id',array('value'=>'ComposantLogiciel.id'));
 		echo $this->Form->input('taux');
 	?>
 	</fieldset>

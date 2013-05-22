@@ -51,17 +51,18 @@ class ComposantLogicielsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->ComposantLogiciel->create();
-			if ($this->ComposantLogiciel->saveAll($this->request->data)) {
+			if ($this->ComposantLogiciel->saveAll($this->request->data,true)) {
 				$this->Session->setFlash(__('The composant logiciel has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The composant logiciel could not be saved. Please, try again.'));
 			}
 		}
+                $versions = $this->ComposantLogiciel->VersionComposant->find('list');
 		$types = $this->ComposantLogiciel->Type->find('list');
 		$natures = $this->ComposantLogiciel->Nature->find('list');
 		$licenses = $this->ComposantLogiciel->License->find('list');
-		$this->set(compact('types', 'natures', 'licenses'));
+		$this->set(compact('types', 'natures', 'licenses','versions'));
 	}
 
 /**
@@ -76,7 +77,7 @@ class ComposantLogicielsController extends AppController {
 			throw new NotFoundException(__('Logiciel Composant Invalide'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->ComposantLogiciel->saveAll($this->request->data)) {
+			if ($this->ComposantLogiciel->saveAll($this->request->data,true)) {
 				$this->Session->setFlash(__('Le Composant Logiciel a été enregistré'));
 				$this->redirect(array('action' => 'index'));
 			} else {

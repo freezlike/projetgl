@@ -23,7 +23,7 @@ class ComposantLogiciel extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'titre';
+	public $displayField = 'id';
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -33,7 +33,8 @@ class ComposantLogiciel extends AppModel {
  *
  * @var array
  */
-	public $hasOne = array(
+        
+	public $hasMany = array(
 		'VersionC' => array(
 			'className' => 'VersionComposant',
 			'foreignKey' => 'composant_logiciel_id',
