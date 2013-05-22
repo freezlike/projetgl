@@ -34,7 +34,7 @@ class ComposantLogiciel extends AppModel {
  * @var array
  */
         
-	public $hasOne = array(
+	public $hasMany = array(
 		'VersionC' => array(
 			'className' => 'VersionComposant',
 			'foreignKey' => 'composant_logiciel_id',
